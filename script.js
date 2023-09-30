@@ -58,14 +58,12 @@ async function connectToMetaMask() {
 }
 
 // Attach click event handler to the "Connect with MetaMask" button
-document.getElementById('connectMetaMaskButton').addEventListener('click', connectWithMetaMask);
-
+document.getElementById('connectMetaMaskButton').addEventListener('click', connectToMetaMask);
 
 // Connect to MetaMask when the page loads
 window.addEventListener('load', function () {
     connectToMetaMask();
 });
-
 
 // Connect to Ethereum when the page loads
 window.addEventListener('load', function () {
