@@ -40,17 +40,19 @@ async function getContractData() {
 }
 
 async function connectToMetaMask() {
+    console.log('Connecting to MetaMask...');
     if (typeof window.ethereum !== 'undefined') {
         try {
             // Request user permission to access their Ethereum accounts
             await window.ethereum.request({ method: 'eth_requestAccounts' });
+            console.log('Access to Ethereum accounts granted.');
 
             // Initialize web3 with the MetaMask provider
             window.web3 = new Web3(window.ethereum);
 
             console.log('Connected to MetaMask');
         } catch (error) {
-            console.error('User denied access to MetaMask:', error);
+            console.error('Error connecting to MetaMask:', error);
         }
     } else {
         console.error('MetaMask is not installed.');
