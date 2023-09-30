@@ -57,6 +57,10 @@ async function connectToMetaMask() {
     }
 }
 
+// Attach click event handler to the "Connect with MetaMask" button
+document.getElementById('connectMetaMaskButton').addEventListener('click', connectWithMetaMask);
+
+
 // Connect to MetaMask when the page loads
 window.addEventListener('load', function () {
     connectToMetaMask();
